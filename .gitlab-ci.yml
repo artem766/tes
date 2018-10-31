@@ -1,0 +1,23 @@
+image: vittsoy/yii2-qr
+
+stages:
+  - deploy
+
+before_script:
+  - mkdir -p /root/.ssh && chmod 0700 /root/.ssh
+  - ssh-keyscan git.qrpay.local > /root/.ssh/known_hosts  # git
+  - ssh-keyscan 192.168.8.138 >> /root/.ssh/known_hosts  # stage
+  - echo "$SSH_PRIVATE_KEY" >> /root/.ssh/id_rsa
+  - echo "$SSH_PUBLIC_KEY" >> /root/.ssh/id_rsa.pub  && chmod 0700 /root/.ssh/*
+  #- eval $(ssh-agent -s)  # запускаем ssh-агент 
+  #- ssh-add <(echo "$SSH_PRIVATE_KEY")  # единый секретный приватный ключ для авторизации в git, stage и prod
+  #- ssh-add <(echo "$SSH_PROD_PRIVATE")
+
+deploy_stage:
+  stage: deploy
+  script:
+    - ssh loguser@192.168.8.138 sudo ./update-web-woop.sh
+#    - cd qrdb
+#    - pgmigrate -vv -c postgres://$PG_MIGRATE_USER:$PG_MIGRATE_PASS@192.168.8.135:5432/qrpay -t latest migrate
+  only: 
+    - develop
