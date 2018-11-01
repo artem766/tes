@@ -21,24 +21,52 @@ return [
 			],
 		],
 		[
+			'class' => 'yii2lab\init\domain\filters\input\Custom',
+			'title' => 'Acquiring',
+			'segment' => 'servers',
+			'value' => [
+				'acquiring' => [
+					'host' => 'https://pci-ws.wooppay.com',
+				],
+			],
+		],
+		[
+			'class' => 'yii2lab\init\domain\filters\input\Custom',
+			'title' => 'DB',
+			'segment' => 'servers',
+			'value' => [
+				'db' => [
+					'main' => [
+						'driver' => '',
+						'host' => '',
+						'username' => '',
+						'password' => '',
+						'dbname' => '',
+						'defaultSchema' => '',
+					],
+				],
+				'static' => [
+					'publicPath' => '@frontend/web/',
+					'domain' => 'http://wooppay.yii/',
+					'driver' => 'local',
+					'connection' => [
+						'path' => '@frontend/web',
+					],
+				],
+
+
+			],
+		],
+		[
 			'class' => 'yii2lab\init\domain\filters\input\ServerDb',
 			'default' => [
 				'driver' => DbDriverEnum::MYSQL,
 				'host' => 'localhost',
 				'username' => 'root',
 				'password' => '',
-				'dbname' => 'wooppay_yii',
+				'dbname' => 'yii',
 			],
 		],
-        [
-            'class' => 'yii2lab\init\domain\filters\input\Custom',
-            'title' => 'Core',
-            'segment' => 'servers.core',
-            'value' => [
-                'domain' => 'http://api.core.yii/',
-                'defaultVersion' => 5,
-            ],
-        ],
 		[
 			'class' => 'yii2lab\init\domain\filters\input\ServerMail',
 			'default' => [
@@ -55,15 +83,15 @@ return [
 				'debug' => false,
 			],
 		],*/
-        [
-            'class' => 'yii2lab\init\domain\filters\input\Custom',
-            'title' => 'Core',
-            'segment' => 'mode',
-            'value' => [
-                'env' => YiiEnvEnum::DEV,
-                'debug' => true,
-            ],
-        ],
+		[
+			'class' => 'yii2lab\init\domain\filters\input\Custom',
+			'title' => 'Core',
+			'segment' => 'mode',
+			'value' => [
+				'env' => YiiEnvEnum::DEV,
+				'debug' => true,
+			],
+		],
 		[
 			'class' => 'yii2lab\init\domain\filters\input\CookieValidationKey',
 			'length' => 32,
@@ -75,15 +103,13 @@ return [
 		[
 			'class' => 'yii2lab\init\domain\filters\input\Domain',
 			'driver' => [
-				'primary' => 'core',
-				'slave' => 'ar',
+				'primary' => 'ar',
+				'slave' => 'disc',
 			],
 		],
 		[
 			'class' => 'yii2lab\init\domain\filters\input\ServerStatic',
 			'default' => [
-				// todo: выпилить publicPath
-				// todo: сделать профили
 				'publicPath' => '@frontend/web/',
 				'domain' => 'http://wooppay.yii/',
 				'driver' => 'local',
