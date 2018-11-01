@@ -40,13 +40,6 @@
 		"yii2module/yii2-account": "1.62.*",
 		"yii2module/yii2-profile": "0.22.*",
 		"yii2module/yii2-summary": "0.4.*",
-		"yii2woop/yii2-service": "1.64.*",
-		"yii2woop/yii2-operation": "0.70.*",
-		"yii2woop/yii2-tps-generated": "1.5.*",
-		"yii2woop/yii2-common": "2.27.*",
-		"yii2woop/yii2-history": "0.19.*",
-		"yii2woop/yii2-bank": "2.21.*",
-		"yii2woop/yii2-partner": "0.7.*",
 		"alex-lyanik/yii2-viewlog": "dev-master"
 	},
 	"require-dev": {
