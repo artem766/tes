@@ -168,10 +168,7 @@ return [
 					'@vendor/yii2module/yii2-account/src/domain/v2/migrations',
 					'@vendor/yii2module/yii2-profile/src/domain/v2/migrations',
 					'@vendor/yii2module/yii2-article/src/domain/migrations',
-					'@vendor/yii2woop/yii2-service/src/domain/v3/migrations',
 					'@vendor/yii2module/yii2-summary/src/domain/migrations',
-					'@vendor/yii2woop/yii2-operation/src/domain/migrations',
-					'@vendor/yii2woop/yii2-bank/src/domain/v2/migrations',
 					'@vendor/yiisoft/yii2/log/migrations',
 				],
 				'scan' => array_merge([
