@@ -1,27 +1,25 @@
 <?php
 
-namespace yii2woop\service\domain\v3;
+namespace domain\v1\finance;
 
 /**
  * Class Domain
  * 
- * @package yii2woop\service\domain\v3
- * @property-read \yii2woop\service\domain\v3\interfaces\services\CategoryInterface $category
- * @property-read \yii2woop\service\domain\v3\interfaces\services\FavoriteInterface $favorite
- * @property-read \yii2woop\service\domain\v3\interfaces\services\FieldInterface $field
- * @property-read \yii2woop\service\domain\v3\interfaces\services\ServiceInterface $service
- * @property-read \yii2woop\service\domain\v3\interfaces\repositories\RepositoriesInterface $repositories
- * @property-read \yii2woop\service\domain\v3\interfaces\services\BlacklistInterface $blacklist
+ * @package domain\v1\finance\enums
+ * @property-read \domain\v1\finance\enums\interfaces\services\ProcessInterface $service
  */
 class Domain extends \yii2lab\domain\Domain {
 	
 	public function config() {
 		return [
 			'repositories' => [
-				''
+				'process',
+				'documentType',
+
 			],
 			'services' => [
-
+				'process',
+				'document'
 			],
 		];
 	}

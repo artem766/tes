@@ -1,18 +1,18 @@
 <?php
 
-namespace yii2woop\service\domain\v3\entities;
+namespace domain\v1\finance\enums\entities;
 
 use yii2lab\domain\BaseEntity;
 use yii2lab\domain\values\TimeValue;
 use yii2module\lang\domain\helpers\LangHelper;
-use yii2woop\service\domain\v3\enums\SummaryEnum;
-use yii2woop\service\domain\v3\helpers\PictureHelper;
-use yii2woop\service\domain\v3\helpers\ServiceHelper;
+use domain\v1\finance\enums\enums\SummaryEnum;
+use domain\v1\finance\enums\helpers\PictureHelper;
+use domain\v1\finance\enums\helpers\ServiceHelper;
 
 /**
  * Class ServiceEntity
  *
- * @package yii2woop\service\domain\v3\entities
+ * @package domain\v1\finance\enums\entities
  *
  * @property integer $id
  * @property string $name

@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2woop\service\domain\v3\traits\services;
+namespace domain\v1\finance\enums\traits\services;
 
 trait BlacklistTrait
 {
