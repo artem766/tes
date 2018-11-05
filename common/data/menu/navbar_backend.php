@@ -6,7 +6,7 @@ return [
 			'label' => ['admin', 'main'],
 		],
 
-		'backend\modules\operationType\helpers\Menu',
+		'backend\modules\operation\helpers\Menu',
 		'yii2module\article\admin\helpers\Menu',
 		'yii2woop\service\admin\helpers\Menu',
 		[

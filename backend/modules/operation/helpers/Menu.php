@@ -1,6 +1,6 @@
 <?php
 
-namespace backend\modules\operationType\helpers;
+namespace backend\modules\operation\helpers;
 
 use common\enums\rbac\PermissionEnum;
 use yii2lab\extension\menu\interfaces\MenuInterface;
