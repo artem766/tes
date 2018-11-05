@@ -16,6 +16,14 @@ use yii2lab\domain\services\base\BaseActiveService;
 class DocumentService extends BaseActiveService implements DocumentInterface
 {
 
+	public function getDataForList(){
+		$documentEntityCollection = $this->repository->all();
+		$array = [];
+		foreach ($documentEntityCollection as $entity){
+			$array[$entity->id] = $entity->name;
+		}
+		return $array;
+	}
 
 	public function sort()
 	{

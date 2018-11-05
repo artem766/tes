@@ -19,7 +19,7 @@ class ProcessSchema extends BaseSchema
 	{
 		return [
 
-			'document_type' => [
+			'document' => [
 				'type' => RelationEnum::ONE,
 				'field' => 'id',
 				'foreign' => [
@@ -27,7 +27,7 @@ class ProcessSchema extends BaseSchema
 					'field' => 'document_type_id',
 				],
 			],
-			'operation_type' => [
+			'operation' => [
 				'type' => RelationEnum::ONE,
 				'field' => 'id',
 				'foreign' => [
