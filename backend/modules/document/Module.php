@@ -1,10 +1,10 @@
 <?php
 
-namespace yii2module\article\admin;
+namespace backend\modules\document;
 
+use common\enums\rbac\PermissionEnum;
 use yii\base\Module as YiiModule;
 use yii2lab\helpers\Behavior;
-use yii2module\article\domain\enums\ArticlePermissionEnum;
 
 
 /**
@@ -13,12 +13,12 @@ use yii2module\article\domain\enums\ArticlePermissionEnum;
 class Module extends YiiModule
 {
 
-	public static $langDir = '@yii2module/article/domain/messages';
+	public static $langDir = '@frontend\domain\v1\finance\messages';
 
     public function behaviors()
     {
         return [
-            'access' => Behavior::access(ArticlePermissionEnum::POST_MANAGE),
+           'access' => Behavior::access(PermissionEnum::BACKEND_ALL),
         ];
     }
 }

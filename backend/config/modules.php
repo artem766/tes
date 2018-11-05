@@ -32,11 +32,11 @@ return [
 		'class' => 'yii2module\offline\admin\Module',
 		'as access' => Behavior::access(PermissionEnum::OFFLINE_MANAGE),
 	],
-//	'documentType' => [
-//		'class' => 'domain\v1\finance\Module',
-//		'as access' => Behavior::access(PermissionEnum::BACKEND_ALL),
-//	],
 
+	'document' => [
+		'class' => 'backend\modules\document\Module',
+		'as access' => Behavior::access(PermissionEnum::BACKEND_ALL),
+	],
 	'operation' => [
 		'class' => 'backend\modules\operation\Module',
 		'as access' => Behavior::access(PermissionEnum::BACKEND_ALL),

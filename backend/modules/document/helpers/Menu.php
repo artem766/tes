@@ -1,20 +1,20 @@
 <?php
 
-namespace yii2module\article\admin\helpers;
+namespace backend\modules\document\helpers;
 
+use common\enums\rbac\PermissionEnum;
 use yii2lab\extension\menu\interfaces\MenuInterface;
-use yii2module\article\domain\enums\ArticlePermissionEnum;
+
 
 class Menu implements MenuInterface {
-	
+
 	public function toArray() {
 		return [
-			'label' => ['article/main', 'title'],
-			'url' => 'article/manage',
+			'label' => ['finance/document', 'title'],
+			'url' => 'document',
 			'icon' => 'file-text-o',
-			'module' => 'article',
-			'access' => ArticlePermissionEnum::POST_MANAGE,
+			'module' => 'document',
+			'access' => PermissionEnum::BACKEND_ALL,
 		];
 	}
-
 }

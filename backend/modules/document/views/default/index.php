@@ -4,24 +4,25 @@
 
 use yii\grid\GridView;
 use yii\helpers\Html;
-use yii2lab\misc\yii\grid\ActionColumn;
-use yii2lab\misc\yii\grid\TitleColumn;
 
-$this->title = Yii::t('article/main', 'list');
+use yii2lab\misc\yii\grid\TitleColumn;
+use yii2lab\extension\web\grid\ActionColumn;
+$this->title = Yii::t('finance/operation', 'list');
 
 $baseUrl = $this->context->getBaseUrl();
 
 $columns = [
 	[
-		'class' => TitleColumn::class,
-		'baseUrl' => $baseUrl,
+		'attribute' => 'name',
+		'label' => Yii::t('finance/document', 'name'),
 	],
 	[
-		'attribute' => 'name',
-		'label' => Yii::t('main', 'name'),
+		'attribute' => 'description',
+		'label' => Yii::t('finance/document', 'description'),
 	],
 	[
 		'class' => ActionColumn::class,
+		'template' => '{update} {delete}'
 	],
 ];
 

@@ -7,6 +7,7 @@ return [
 		],
 
 		'backend\modules\operation\helpers\Menu',
+		'backend\modules\document\helpers\Menu',
 		'yii2module\article\admin\helpers\Menu',
 		'yii2woop\service\admin\helpers\Menu',
 		[

@@ -17,6 +17,10 @@ $columns = [
 		'label' => Yii::t('finance/operation', 'name'),
 	],
 	[
+		'attribute' => 'description',
+		'label' => Yii::t('finance/operation', 'description'),
+	],
+	[
 		'attribute' => 'isForeign',
 		'label' => Yii::t('finance/operation', 'isForeign'),
 		'content'=>function($data){
