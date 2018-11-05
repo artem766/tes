@@ -13,7 +13,7 @@ class Document extends ActiveRecord
 	 */
 	public static function tableName()
 	{
-		return '{{%document_type}}';
+		return '{{%document}}';
 	}
 	
 //	public function behaviors()

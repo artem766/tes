@@ -9,7 +9,6 @@ use yii2lab\domain\base\Model;
 class PostForm extends Model
 {
 	
-	public $title;
 	public $name;
 	public $content;
 

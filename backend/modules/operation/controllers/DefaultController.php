@@ -8,6 +8,7 @@ class DefaultController extends Controller {
 
 	public $serviceName = 'finance.operation';
 	public $formClass = 'backend\modules\operation\PostForm';
+	public $service = 'finance.operation';
 
 	public function actions() {
 		$actions = parent::actions();
