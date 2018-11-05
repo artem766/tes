@@ -2,7 +2,9 @@
 
 namespace domain\v1\finance\repositories\schema;
 
-use yii2lab\domain\RelationEnum;
+
+
+use yii2lab\domain\enums\RelationEnum;
 use yii2lab\domain\repositories\relations\BaseSchema;
 
 /**
@@ -19,17 +21,17 @@ class ProcessSchema extends BaseSchema
 
 			'documentType' => [
 				'type' => RelationEnum::ONE,
-				'field' => 'id',
+				'field' => 'document_type_id',
 				'foreign' => [
-					'id' => 'finance.documentType',
+					'id' => 'finance.document',
 					'field' => 'document_type_id',
 				],
 			],
 			'operationType' => [
 				'type' => RelationEnum::ONE,
-				'field' => 'id',
+				'field' => 'operation_type_id',
 				'foreign' => [
-					'id' => 'finance.operationType',
+					'id' => 'finance.operation',
 					'field' => 'operation_type_id',
 				],
 			],

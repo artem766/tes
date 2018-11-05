@@ -15,9 +15,10 @@ class m181104_084846_create_operation_table extends Migration
 	public function getColumns()
 	{
 		return [
-			'id' => $this->primaryKey(),
+			'operation_type_id' => $this->primaryKey(),
 			'name' => $this->text(),
 			'description' => $this->text(),
+			'isForeign' => $this->boolean()->defaultValue(false),
 		];
 
 	}

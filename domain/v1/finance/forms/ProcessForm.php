@@ -1,6 +1,6 @@
 <?php
 
-namespace domain\v1\tec\forms;
+namespace domain\v1\finance\forms;
 
 use yii2lab\domain\base\Model;
 

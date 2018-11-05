@@ -7,21 +7,22 @@ use yii\helpers\Html;
 use yii2lab\misc\yii\grid\ActionColumn;
 use yii2lab\misc\yii\grid\TitleColumn;
 
-$this->title = Yii::t('article/main', 'list');
+$this->title = Yii::t('finance/operation', 'list');
 
 $baseUrl = $this->context->getBaseUrl();
 
 $columns = [
-	[
-		'class' => TitleColumn::class,
-		'baseUrl' => $baseUrl,
-	],
+
 	[
 		'attribute' => 'name',
-		'label' => Yii::t('main', 'name'),
+		'label' => Yii::t('finance/operation', 'name'),
 	],
 	[
-		'class' => ActionColumn::class,
+		'attribute' => 'isForeign',
+		'label' => Yii::t('finance/operation', 'isForeign'),
+		'content'=>function($data){
+			return $data->isForeign == true ? 'Да' : 'Нет';
+		}
 	],
 ];
 

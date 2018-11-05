@@ -14,9 +14,10 @@ use yii2lab\domain\BaseEntity;
  * @property string $name
  */
 
-class OperationTypeEntity  extends BaseEntity
+class OperationEntity  extends BaseEntity
 {
-	public $id;
+	public $operation_type_id;
 	public $name;
 	public $description;
+	public $isForeign;
 }

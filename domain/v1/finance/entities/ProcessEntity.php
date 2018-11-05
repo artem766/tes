@@ -2,9 +2,9 @@
 
 namespace domain\v1\finance\entities;
 
-use yii\helpers\ArrayHelper;
+
 use yii2lab\domain\BaseEntity;
-use yii2lab\domain\helpers\Helper;
+
 
 /**
  * Class FieldEntity
@@ -20,6 +20,7 @@ class ProcessEntity extends BaseEntity {
 	
 	protected $id;
 	protected $document_type;
+	protected $operation_type;
 	protected $created_at;
 
 	public function fieldType() {

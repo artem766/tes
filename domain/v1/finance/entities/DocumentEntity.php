@@ -14,9 +14,9 @@ use yii2lab\domain\BaseEntity;
  * @property string $name
  */
 
-class DocumentTypeEntity  extends BaseEntity
+class DocumentEntity  extends BaseEntity
 {
-	public $id;
+	public $document_type_id;
 	public $name;
 	public $description;
 }
