@@ -37,5 +37,6 @@ return [
 	'rbac' => 'yii2lab\rbac\domain\Domain',
 	'lang' => 'yii2module\lang\domain\Domain',
 	'geo' => 'yii2lab\geo\domain\Domain',
+	'finance' => 'domain\v1\finance\Domain',
 	'jwt' => 'yii2lab\extension\jwt\Domain',
 ];
