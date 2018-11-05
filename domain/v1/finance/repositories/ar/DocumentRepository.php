@@ -13,12 +13,6 @@ class DocumentRepository extends BaseActiveArRepository implements ProcessInterf
 //	protected $schemaClass = true;
 
 
-	
-	public function fieldAlias() {
-		return [
-			'id' => 'service_field_value_id',
-			'document_type' => 'document_type_id',
-		];
-	}
+
 
 }

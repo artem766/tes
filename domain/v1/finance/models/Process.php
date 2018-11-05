@@ -16,14 +16,6 @@ class Process extends ActiveRecord
 		return '{{%process}}';
 	}
 	
-//	public function behaviors()
-//	{
-//		return [
-//			'rulesJson' => [
-//				'class' => EnumBehavior::class,
-//				'attributes' => ['synonyms'],
-//			],
-//		];
-//	}
+
 	
 }

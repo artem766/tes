@@ -14,11 +14,6 @@ class OperationRepository extends BaseActiveArRepository implements ProcessInter
 
 
 	
-	public function fieldAlias() {
-		return [
-			'id' => 'service_field_value_id',
-			'document_type' => 'document_type_id',
-		];
-	}
+
 
 }

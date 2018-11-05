@@ -16,14 +16,6 @@ class Document extends ActiveRecord
 		return '{{%document}}';
 	}
 	
-//	public function behaviors()
-//	{
-//		return [
-//			'rulesJson' => [
-//				'class' => EnumBehavior::class,
-//				'attributes' => ['synonyms'],
-//			],
-//		];
-//	}
+
 	
 }

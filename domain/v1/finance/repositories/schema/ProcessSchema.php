@@ -19,17 +19,17 @@ class ProcessSchema extends BaseSchema
 	{
 		return [
 
-			'documentType' => [
+			'document_type' => [
 				'type' => RelationEnum::ONE,
-				'field' => 'document_type_id',
+				'field' => 'id',
 				'foreign' => [
 					'id' => 'finance.document',
 					'field' => 'document_type_id',
 				],
 			],
-			'operationType' => [
+			'operation_type' => [
 				'type' => RelationEnum::ONE,
-				'field' => 'operation_type_id',
+				'field' => 'id',
 				'foreign' => [
 					'id' => 'finance.operation',
 					'field' => 'operation_type_id',

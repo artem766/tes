@@ -15,6 +15,7 @@ class DefaultController extends Controller {
 		$actions = parent::actions();
 		$actions['index']['render'] = 'index';
 		$actions['view']['render'] = 'view';
+
 		return $actions;
 	}
 	

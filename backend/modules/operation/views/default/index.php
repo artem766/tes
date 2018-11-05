@@ -4,15 +4,14 @@
 
 use yii\grid\GridView;
 use yii\helpers\Html;
-use yii2lab\misc\yii\grid\ActionColumn;
-use yii2lab\misc\yii\grid\TitleColumn;
 
+use yii2lab\misc\yii\grid\TitleColumn;
+use yii2lab\extension\web\grid\ActionColumn;
 $this->title = Yii::t('finance/operation', 'list');
 
 $baseUrl = $this->context->getBaseUrl();
 
 $columns = [
-
 	[
 		'attribute' => 'name',
 		'label' => Yii::t('finance/operation', 'name'),
@@ -23,6 +22,10 @@ $columns = [
 		'content'=>function($data){
 			return $data->isForeign == true ? 'Да' : 'Нет';
 		}
+	],
+	[
+		'class' => ActionColumn::class,
+		'template' => '{update} {delete}'
 	],
 ];
 

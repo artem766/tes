@@ -16,14 +16,5 @@ class Operation extends ActiveRecord
 		return '{{%operation}}';
 	}
 	
-//	public function behaviors()
-//	{
-//		return [
-//			'rulesJson' => [
-//				'class' => EnumBehavior::class,
-//				'attributes' => ['synonyms'],
-//			],
-//		];
-//	}
-	
+
 }

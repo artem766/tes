@@ -7,8 +7,7 @@ use yii2lab\navigation\domain\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use yii2lab\helpers\Page;
 use yii2lab\navigation\domain\widgets\Alert;
-\App::$domain->finance->operation->all();
-\App::$domain->finance->document->all();
+
 AppAsset::register($this);
 ?>
 

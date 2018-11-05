@@ -28,6 +28,9 @@ class ProcessEntity extends BaseEntity {
 			'document_type' => [
 				'type' => DocumentEntity::class,
 			],
+			'operation_type' => [
+				'type' => OperationEntity::class,
+			],
 		];
 	}
 	

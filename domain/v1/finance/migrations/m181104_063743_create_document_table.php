@@ -15,7 +15,7 @@ class m181104_063743_create_document_table extends Migration
 	public function getColumns()
 	{
 		return [
-			'document_type_id' => $this->primaryKey(),
+			'id' => $this->primaryKey(),
 			'name' => $this->text(),
 			'description' => $this->text(),
 		];
