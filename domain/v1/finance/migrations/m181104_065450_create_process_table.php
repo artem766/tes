@@ -17,6 +17,7 @@ class m181104_065450_create_process_table extends Migration
 		return [
 			'id' => $this->primaryKey(),
 			'document_type_id' =>$this->integer(),
+			'operation_type_id' =>$this->integer(),
 			'created_at' => $this->timestamp()->notNull(),
 		];
 

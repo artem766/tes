@@ -3,11 +3,11 @@
 use yii2lab\db\domain\db\MigrationCreateTable as Migration;
 
 /**
-* Handles the creation of table `document`.
+* Handles the creation of table `operation_type`.
 */
-class m181104_063743_create_document_type_table extends Migration
+class m181104_084846_create_operation_table extends Migration
 {
-	public $table = '{{%document_type}}';
+	public $table = '{{%operation}}';
 
 	/**
 	 * @inheritdoc
@@ -20,6 +20,11 @@ class m181104_063743_create_document_type_table extends Migration
 			'description' => $this->text(),
 		];
 
+	}
+
+	public function afterCreate()
+	{
+		
 	}
 
 }
