@@ -6,11 +6,11 @@ use domain\v1\finance\interfaces\services\ProcessInterface;
 use yii2lab\domain\services\base\BaseActiveService;
 
 /**
- * Class ServiceService
+ * Class ProcessService
  *
  * @package domain\v1\finance\services
  *
- * @property \domain\v1\finance\interfaces\services\ProcessInterface $repository
+ * @property \domain\v1\finance\interfaces\repositories\ProcessInterface $repository
  */
 class ProcessService extends BaseActiveService implements ProcessInterface
 {

@@ -6,9 +6,9 @@ namespace domain\v1\finance\repositories\ar;
 use domain\v1\finance\interfaces\repositories\ProcessInterface;
 use yii2lab\extension\activeRecord\repositories\base\BaseActiveArRepository;
 
-class OperationTypeRepository extends BaseActiveArRepository implements ProcessInterface{
+class OperationRepository extends BaseActiveArRepository implements ProcessInterface{
 
-	protected $modelClass = 'domain\v1\finance\models\Process';
+	protected $modelClass = 'domain\v1\finance\models\Operation';
 
 //	protected $schemaClass = true;
 

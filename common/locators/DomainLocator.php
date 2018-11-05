@@ -24,5 +24,6 @@ use yii\di\ServiceLocator;
  * @property-read \yii2woop\history\domain\Domain $history
  * @property-read \yii2module\summary\domain\Domain $summary
  * @property-read \yii2woop\partner\domain\Domain $partner
+ * @property-read \domain\v1\finance\Domain $finance
  */
 class DomainLocator extends ServiceLocator {}

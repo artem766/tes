@@ -6,7 +6,7 @@ use yii2lab\domain\web\ActiveController as Controller;
 
 class DefaultController extends Controller {
 
-	public $serviceName = 'finance.operationType';
+	public $serviceName = 'finance.operation';
 	public $formClass = 'backend\modules\operation\PostForm';
 
 	public function actions() {
