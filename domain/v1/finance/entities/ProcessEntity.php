@@ -2,13 +2,11 @@
 
 namespace domain\v1\finance\entities;
 
-
 use yii2lab\domain\BaseEntity;
 
-
 /**
- * Class FieldEntity
- *
+ * Class ProcessEntity
+ * 
  * @package domain\v1\finance\entities
  *
  * @property integer $id
@@ -17,7 +15,7 @@ use yii2lab\domain\BaseEntity;
  */
 
 class ProcessEntity extends BaseEntity {
-	
+
 	protected $id;
 	protected $document;
 	protected $operation;
@@ -33,6 +31,6 @@ class ProcessEntity extends BaseEntity {
 			],
 		];
 	}
-	
+
 
 }

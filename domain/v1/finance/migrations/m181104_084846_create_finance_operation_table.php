@@ -5,9 +5,9 @@ use yii2lab\db\domain\db\MigrationCreateTable as Migration;
 /**
 * Handles the creation of table `operation_type`.
 */
-class m181104_084846_create_operation_table extends Migration
+class m181104_084846_create_finance_operation_table extends Migration
 {
-	public $table = '{{%operation}}';
+	public $table = '{{%finance_operation}}';
 
 	/**
 	 * @inheritdoc

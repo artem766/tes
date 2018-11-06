@@ -1,13 +1,12 @@
 <?php
 
-
 namespace domain\v1\finance\entities;
 
 use yii2lab\domain\BaseEntity;
 
 /**
- * Class FieldEntity
- *
+ * Class OperationEntity
+ * 
  * @package domain\v1\finance\entities
  *
  * @property integer $id

@@ -5,9 +5,9 @@ use yii2lab\db\domain\db\MigrationCreateTable as Migration;
 /**
 * Handles the creation of table `process`.
 */
-class m181104_065450_create_process_table extends Migration
+class m181104_065450_create_finance_process_table extends Migration
 {
-	public $table = '{{%process}}';
+	public $table = '{{%finance_process}}';
 
 	/**
 	 * @inheritdoc

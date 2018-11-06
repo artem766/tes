@@ -2,15 +2,18 @@
 
 namespace domain\v1\finance\repositories\ar;
 
-
-use domain\v1\finance\interfaces\repositories\ProcessInterface;
 use yii2lab\extension\activeRecord\repositories\base\BaseActiveArRepository;
+use domain\v1\finance\interfaces\repositories\OperationInterface;
 
-class OperationRepository extends BaseActiveArRepository implements ProcessInterface{
+/**
+ * Class OperationRepository
+ * 
+ * @package domain\v1\finance\repositories\ar
+ * 
+ * @property-read \domain\v1\finance\Domain $domain
+ */
+class OperationRepository extends BaseActiveArRepository implements OperationInterface {
 
-	protected $modelClass = 'domain\v1\finance\models\Operation';
-
-//	protected $schemaClass = true;
 
 	public function fieldAlias()
 	{
@@ -19,7 +22,7 @@ class OperationRepository extends BaseActiveArRepository implements ProcessInter
 
 		];
 	}
-	
+
 
 
 }

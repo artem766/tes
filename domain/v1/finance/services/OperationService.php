@@ -2,16 +2,18 @@
 
 namespace domain\v1\finance\services;
 
+use yii2lab\domain\services\base\BaseActiveService;
 use domain\v1\finance\interfaces\services\OperationInterface;
 use yii2lab\domain\data\Query;
-use yii2lab\domain\services\base\BaseActiveService;
+
 
 /**
  * Class OperationService
- *
+ * 
  * @package domain\v1\finance\services
- *
- * @property \domain\v1\finance\interfaces\repositories\OperationInterface $repository
+ * 
+ * @property-read \domain\v1\finance\Domain $domain
+ * @property-read \domain\v1\finance\interfaces\repositories\OperationInterface $repository
  */
 class OperationService extends BaseActiveService implements OperationInterface
 {

@@ -8,10 +8,10 @@ use yii2lab\domain\enums\RelationEnum;
 use yii2lab\domain\repositories\relations\BaseSchema;
 
 /**
- * Class BlacklistSchema
- *
+ * Class ProcessSchema
+ * 
  * @package domain\v1\finance\repositories\schema
- *
+ * 
  */
 class ProcessSchema extends BaseSchema
 {

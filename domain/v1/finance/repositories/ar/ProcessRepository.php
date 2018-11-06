@@ -2,15 +2,18 @@
 
 namespace domain\v1\finance\repositories\ar;
 
-
+use yii2lab\extension\activeRecord\repositories\base\BaseActiveArRepository;
 use domain\v1\finance\interfaces\repositories\ProcessInterface;
 use yii2lab\domain\data\Query;
-use yii2lab\extension\activeRecord\repositories\base\BaseActiveArRepository;
 
-class ProcessRepository extends BaseActiveArRepository implements ProcessInterface
-{
-
-	protected $modelClass = 'domain\v1\finance\models\Process';
+/**
+ * Class ProcessRepository
+ *
+ * @package domain\v1\finance\repositories\ar
+ *
+ * @property-read \domain\v1\finance\Domain $domain
+ */
+class ProcessRepository extends BaseActiveArRepository implements ProcessInterface {
 
 	protected $schemaClass = true;
 
