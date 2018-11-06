@@ -18,6 +18,7 @@ use yii2mod\markdown\MarkdownEditor;
 <?= $form->field($model, 'description')->textInput(); ?>
 
 <?= $form->field($model, 'isForeign')->checkbox(); ?>
+
 <div class="form-group">
 	<?= Html::submitButton(Yii::t('action', 'save'), ['class' => 'btn btn-primary']) ?>
 </div>

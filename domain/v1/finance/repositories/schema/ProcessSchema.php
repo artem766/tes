@@ -21,18 +21,18 @@ class ProcessSchema extends BaseSchema
 
 			'document' => [
 				'type' => RelationEnum::ONE,
-				'field' => 'id',
+				'field' => 'document',
 				'foreign' => [
 					'id' => 'finance.document',
-					'field' => 'document_type_id',
+					'field' => 'id',
 				],
 			],
 			'operation' => [
 				'type' => RelationEnum::ONE,
-				'field' => 'id',
+				'field' => 'operation',
 				'foreign' => [
 					'id' => 'finance.operation',
-					'field' => 'operation_type_id',
+					'field' => 'id',
 				],
 			],
 		];

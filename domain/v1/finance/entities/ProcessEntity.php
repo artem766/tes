@@ -19,8 +19,8 @@ use yii2lab\domain\BaseEntity;
 class ProcessEntity extends BaseEntity {
 	
 	protected $id;
-	protected $document_type;
-	protected $operation_type;
+	protected $document;
+	protected $operation;
 	protected $created_at;
 
 	public function fieldType() {

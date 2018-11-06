@@ -18,7 +18,7 @@ class m181104_084846_create_operation_table extends Migration
 			'id' => $this->primaryKey(),
 			'name' => $this->text(),
 			'description' => $this->text(),
-			'isForeign' => $this->boolean()->defaultValue(false),
+			'is_foreign' => $this->boolean()->defaultValue(false),
 		];
 
 	}

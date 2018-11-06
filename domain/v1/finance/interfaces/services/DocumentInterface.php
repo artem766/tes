@@ -8,5 +8,5 @@ use yii2lab\domain\interfaces\services\CrudInterface;
 
 interface DocumentInterface extends CrudInterface {
 
-	public function getDataForList();
+	public function arrayList();
 }

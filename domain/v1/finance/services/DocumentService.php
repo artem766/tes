@@ -16,7 +16,7 @@ use yii2lab\domain\services\base\BaseActiveService;
 class DocumentService extends BaseActiveService implements DocumentInterface
 {
 
-	public function getDataForList(){
+	public function arrayList(){
 		$documentEntityCollection = $this->repository->all();
 		$array = [];
 		foreach ($documentEntityCollection as $entity){

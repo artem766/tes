@@ -12,7 +12,13 @@ class OperationRepository extends BaseActiveArRepository implements ProcessInter
 
 //	protected $schemaClass = true;
 
+	public function fieldAlias()
+	{
+		return [
+			'isForeign' => 'is_foreign'
 
+		];
+	}
 	
 
 

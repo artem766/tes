@@ -17,14 +17,14 @@ $columns = [
 		'attribute' => 'operation',
 		'label' => Yii::t('finance/process', 'description'),
 		'content'=>function($data){
-			return $data->operation == true ? 'Да' : 'Нет';
+			return $data->operation->name;
 		}
 	],
 	[
 		'attribute' => 'document',
 		'label' => Yii::t('finance/process', 'description'),
 		'content'=>function($data){
-			return $data->document == true ? 'Да' : 'Нет';
+			return $data->document->name;
 		}
 	],
 	[
