@@ -18,11 +18,13 @@ class Domain extends \yii2lab\domain\Domain {
 				'process',
 				'document',
 				'operation',
+                'organization',
 			],
 			'services' => [
 				'process',
 				'document',
-				'operation'
+				'operation',
+                'organization',
 			],
 		];
 	}

@@ -12,28 +12,18 @@ $this->title = Yii::t('finance/operation', 'list');
 $baseUrl = $this->context->getBaseUrl();
 
 $columns = [
-
 	[
-		'attribute' => 'operation',
-		'label' => Yii::t('finance/process', 'operation'),
-		'content'=>function($data){
-			return $data->operation->name;
-		}
+		'attribute' => 'name',
+		'label' => Yii::t('finance/organization', 'name'),
 	],
 	[
-		'attribute' => 'document',
-		'label' => Yii::t('finance/process', 'document'),
-		'content'=>function($data){
-			return $data->document->name;
-		}
+		'attribute' => 'address',
+		'label' => Yii::t('finance/organization', 'address'),
 	],
-    [
-        'attribute' => 'organization',
-        'label' => Yii::t('finance/process', 'organization'),
-        'content'=>function($data){
-            return $data->organization->name;
-        }
-    ],
+	[
+		'attribute' => 'phone',
+		'label' => Yii::t('finance/organization', 'phone'),
+	],
 	[
 		'class' => ActionColumn::class,
 		'template' => '{update} {delete}'

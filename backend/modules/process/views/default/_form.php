@@ -21,6 +21,8 @@ if (!empty($foreignOperations))
 		<?= $form->field($model, 'document')->dropDownList(\App::$domain->finance->document->arrayList()); ?>
 
 		<?= $form->field($model, 'operation')->dropDownList(\App::$domain->finance->operation->arrayList()); ?>
+
+        <?= $form->field($model, 'organization')->dropDownList(\App::$domain->finance->organization->arrayList()); ?>
     </div>
 
     <div class="form-group">
