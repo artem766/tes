@@ -71,34 +71,6 @@
 		{
 			"type": "composer",
 			"url": "https://asset-packagist.org"
-		},
-		{
-			"type": "git",
-			"url": "http://git.wooppay.local/yii2woop/yii2-service.git"
-		},
-		{
-			"type": "git",
-			"url": "http://git.wooppay.local/yii2woop/yii2-tps-generated.git"
-		},
-		{
-			"type": "git",
-			"url": "http://git.wooppay.local/yii2woop/yii2-common.git"
-		},
-		{
-			"type": "git",
-			"url": "http://git.wooppay.local/yii2woop/yii2-bank.git"
-		},
-		{
-			"type": "git",
-			"url": "http://git.wooppay.local/yii2woop/yii2-operation.git"
-		},
-		{
-			"type": "git",
-			"url": "http://git.wooppay.local/yii2woop/yii2-partner.git"
-		},
-		{
-			"type": "git",
-			"url": "http://git.wooppay.local/yii2woop/yii2-history.git"
 		}
 	]
 }
