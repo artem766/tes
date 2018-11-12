@@ -11,7 +11,9 @@ use yii2lab\domain\BaseEntity;
  *
  * @property integer $id
  * @property integer $service_id
-
+ * @property DocumentEntity $document
+ * @property OperationEntity $operation
+ * @property OrganizationEntity $organization
  */
 
 class ProcessEntity extends BaseEntity {
@@ -19,6 +21,7 @@ class ProcessEntity extends BaseEntity {
 	protected $id;
 	protected $document;
 	protected $operation;
+    protected $organization = null;
 	protected $created_at;
 
 	public function fieldType() {
