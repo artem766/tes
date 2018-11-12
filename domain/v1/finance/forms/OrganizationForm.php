@@ -8,25 +8,26 @@ use yii2lab\domain\base\Model;
 class OrganizationForm extends Model
 {
 
-public $name;
-public $description;
+    public $name;
+    public $address;
+    public $phone;
 
-	public function rules()
-	{
-		return [
-			[['name'], 'required'],
-		];
-	}
+    public function rules()
+    {
+        return [
+            [['name', 'phone', 'address'], 'required'],
+        ];
+    }
 
-	/**
-	 * @inheritdoc
-	 */
-	public function attributeLabels()
-	{
-		return [
-            'name' 		=> Yii::t('finance/document','name'),
-			'address' 		=> Yii::t('finance/document','address'),
-			'phone' 		=> Yii::t('finance/document','phone'),
-		];
-	}
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'name' => Yii::t('finance/organization', 'name'),
+            'address' => Yii::t('finance/organization', 'address'),
+            'phone' => Yii::t('finance/organization', 'phone'),
+        ];
+    }
 }

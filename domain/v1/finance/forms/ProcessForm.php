@@ -10,13 +10,15 @@ class ProcessForm extends Model
 	public $id;
 	public $document;
 	public $operation;
+    public $organization;
+    public $amount;
 	public $created_at;
 
 	public function rules()
 	{
 		return [
 			[['document', 'operation', 'amount'], 'required'],
-            [['amount'], 'numeric'],
+            [['amount'], 'integer'],
 		];
 	}
 

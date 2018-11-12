@@ -40,6 +40,10 @@ return [
 		'class' => 'backend\modules\operation\Module',
 		'as access' => Behavior::access(PermissionEnum::BACKEND_ALL),
 	],
+    'organization' => [
+        'class' => 'backend\modules\organization\Module',
+        'as access' => Behavior::access(PermissionEnum::BACKEND_ALL),
+    ],
 	'process' => [
 		'class' => 'backend\modules\process\Module',
 		'as access' => Behavior::access(PermissionEnum::BACKEND_ALL),
