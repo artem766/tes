@@ -15,8 +15,8 @@ use yii2lab\domain\BaseEntity;
 
 class OrganizationEntity  extends BaseEntity
 {
-	public $id;
-	public $name;
-	public $description;
-	public $isForeign;
+    protected $id;
+    protected $name;
+    protected $phone;
+    protected $address;
 }

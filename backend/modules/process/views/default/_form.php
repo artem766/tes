@@ -23,6 +23,9 @@ if (!empty($foreignOperations))
 		<?= $form->field($model, 'operation')->dropDownList(\App::$domain->finance->operation->arrayList()); ?>
 
         <?= $form->field($model, 'organization')->dropDownList(\App::$domain->finance->organization->arrayList()); ?>
+
+        <?= $form->field($model, 'amount')->textInput(); ?>
+
     </div>
 
     <div class="form-group">

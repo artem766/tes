@@ -16,7 +16,7 @@ use yii2lab\domain\BaseEntity;
 
 class DocumentEntity  extends BaseEntity
 {
-	public $id;
-	public $name;
-	public $description;
+    protected $id;
+    protected $name;
+    protected $description;
 }

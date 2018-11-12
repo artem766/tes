@@ -15,9 +15,10 @@ use yii2mod\markdown\MarkdownEditor;
 
 <?= $form->field($model, 'name')->textInput(); ?>
 
-<?= $form->field($model, 'description')->textInput(); ?>
+<?= $form->field($model, 'address')->textInput(); ?>
 
-<?= $form->field($model, 'isForeign')->checkbox(); ?>
+<?= $form->field($model, 'phone')->textInput(); ?>
+
 
 <div class="form-group">
 	<?= Html::submitButton(Yii::t('action', 'save'), ['class' => 'btn btn-primary']) ?>

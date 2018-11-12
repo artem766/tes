@@ -15,8 +15,8 @@ class ProcessForm extends Model
 	public function rules()
 	{
 		return [
-			[['document', 'operation'], 'required'],
-
+			[['document', 'operation', 'amount'], 'required'],
+            [['amount'], 'numeric'],
 		];
 	}
 

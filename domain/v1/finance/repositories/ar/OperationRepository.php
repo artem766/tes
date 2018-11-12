@@ -18,8 +18,8 @@ class OperationRepository extends BaseActiveArRepository implements OperationInt
 	public function fieldAlias()
 	{
 		return [
-			'isForeign' => 'is_foreign'
-
+			'isForeign' => 'is_foreign',
+            'isIncome' => 'is_income'
 		];
 	}
 

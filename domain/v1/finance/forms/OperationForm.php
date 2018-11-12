@@ -8,26 +8,28 @@ use yii2lab\domain\base\Model;
 class OperationForm extends Model
 {
 
-public $name;
-public $description;
-public $isForeign;
+    public $name;
+    public $description;
+    public $isForeign;
+    public $isIncome;
 
-	public function rules()
-	{
-		return [
-			[['name'], 'required'],
-		];
-	}
+    public function rules()
+    {
+        return [
+            [['name'], 'required'],
+        ];
+    }
 
-	/**
-	 * @inheritdoc
-	 */
-	public function attributeLabels()
-	{
-		return [
-			'name' 		=> Yii::t('finance/operation','name'),
-			'description' 		=> Yii::t('finance/operation','description'),
-			'isForeign' 		=> Yii::t('finance/operation', 'isForeign'),
-		];
-	}
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'name' => Yii::t('finance/operation', 'name'),
+            'description' => Yii::t('finance/operation', 'description'),
+            'isForeign' => Yii::t('finance/operation', 'isForeign'),
+            'isIncome' => Yii::t('finance/operation', 'isIncome'),
+        ];
+    }
 }

@@ -11,6 +11,7 @@ use yii2lab\domain\BaseEntity;
  *
  * @property integer $id
  * @property integer $service_id
+ * @property double $amount
  * @property DocumentEntity $document
  * @property OperationEntity $operation
  * @property OrganizationEntity $organization
@@ -21,17 +22,21 @@ class ProcessEntity extends BaseEntity {
 	protected $id;
 	protected $document;
 	protected $operation;
+    protected $amount = 0;
     protected $organization = null;
 	protected $created_at;
 
 	public function fieldType() {
 		return [
-			'document_type' => [
+			'document' => [
 				'type' => DocumentEntity::class,
 			],
-			'operation_type' => [
+			'operation' => [
 				'type' => OperationEntity::class,
 			],
+            'organization' => [
+                'type' => OrganizationEntity::class,
+            ],
 		];
 	}
 

@@ -18,7 +18,9 @@ class m181104_084846_create_finance_operation_table extends Migration
 			'id' => $this->primaryKey(),
 			'name' => $this->text(),
 			'description' => $this->text(),
+            'amount' => $this->text(),
 			'is_foreign' => $this->boolean()->defaultValue(false),
+            'is_income' => $this->boolean()->defaultValue(false),
 		];
 
 	}

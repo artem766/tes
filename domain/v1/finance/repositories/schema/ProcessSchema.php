@@ -35,6 +35,14 @@ class ProcessSchema extends BaseSchema
 					'field' => 'id',
 				],
 			],
+            'organization' => [
+                'type' => RelationEnum::ONE,
+                'field' => 'organization',
+                'foreign' => [
+                    'id' => 'finance.organization',
+                    'field' => 'id',
+                ],
+            ],
 		];
 	}
 
