@@ -36,7 +36,7 @@ $columns = [
     ],
 	[
 		'class' => ActionColumn::class,
-		'template' => '{update} {delete}'
+		'template' => '{delete}'
 	],
 ];
 

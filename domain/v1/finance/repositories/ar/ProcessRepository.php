@@ -2,7 +2,7 @@
 
 namespace domain\v1\finance\repositories\ar;
 
-use yii2lab\domain\BaseEntity;
+
 use yii2lab\extension\activeRecord\repositories\base\BaseActiveArRepository;
 use domain\v1\finance\interfaces\repositories\ProcessInterface;
 use yii2lab\domain\data\Query;

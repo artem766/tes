@@ -21,12 +21,19 @@ $columns = [
 		'label' => Yii::t('finance/operation', 'description'),
 	],
 	[
-		'attribute' => 'isForeign',
-		'label' => Yii::t('finance/operation', 'isForeign'),
-		'content'=>function($data){
-			return $data->isForeign == true ? 'Да' : 'Нет';
-		}
-	],
+        'attribute' => 'isForeign',
+        'label' => Yii::t('finance/operation', 'isForeign'),
+        'content'=>function($data){
+            return $data->isForeign == true ? 'Да' : 'Нет';
+        }
+    ],
+    [
+        'attribute' => 'isIncome',
+        'label' => Yii::t('finance/operation', 'isIncome'),
+        'content'=>function($data){
+            return $data->isIncome == true ? 'Да' : 'Нет';
+        }
+    ],
 	[
 		'class' => ActionColumn::class,
 		'template' => '{update} {delete}'

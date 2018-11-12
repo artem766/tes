@@ -12,6 +12,8 @@ use yii2lab\domain\BaseEntity;
  * @property integer $id
  * @property string $name
  * @property string $description
+ * @property boolean $isForeign
+ * @property boolean $isIncome
  */
 
 class OperationEntity  extends BaseEntity
