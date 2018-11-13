@@ -9,18 +9,18 @@ use yii2lab\extension\yii\helpers\ArrayHelper;
 
 class ProcessSearch extends Model {
 
-	public $title;
-	public $name;
-	public $merchant;
+	public $document;
+	public $operation;
+	public $organization;
 
 	public function rules() {
 		return [
-			[['title', 'name', 'merchant'], 'safe'],
+			[['document', 'operation', 'organization'], 'safe'],
 		];
 	}
 
 	public function titleAttribute() {
-		return 'title';
+		return 'document';
 	}
 
 	public function prepareQuery(Query $query) {
