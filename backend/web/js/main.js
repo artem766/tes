@@ -1,11 +1,14 @@
-console.log(ids);
+organizationToggle()
 $('#processform-operation').on('change', function () {
-    if ($.inArray(parseInt($("#processform-operation option:selected").val()), [2]) > -1) {
-        console.log("is in array");
-    } else {
-        console.log("is NOT in array");
-    }
+    organizationToggle()
 });
-function showContact() {
 
+function organizationToggle() {
+    if ($.inArray(parseInt($("#processform-operation option:selected").val()), [2]) > -1) {
+        $('.field-processform-organization').show();
+
+    } else {
+        $('.field-processform-organization select').val('');
+        $('.field-processform-organization').hide();
+    }
 }

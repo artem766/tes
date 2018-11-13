@@ -31,7 +31,7 @@ $columns = [
         'attribute' => 'organization',
         'label' => Yii::t('finance/process', 'organization'),
         'content'=>function($data){
-            return $data->organization->name;
+            return !empty($data->organization) ? $data->organization->name : '-';
         }
     ],
 	[

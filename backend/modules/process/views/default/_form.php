@@ -35,4 +35,4 @@ if (!empty($foreignOperations))
 <?php ActiveForm::end(); ?>
 <?php
 $this->registerJs('var ids = ' . json_encode($ids),View::POS_HEAD);
-$this->registerJsFile('/js/main.js' );
+$this->registerJsFile('/js/main.js?'.time());
