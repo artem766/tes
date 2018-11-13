@@ -26,19 +26,4 @@ class ProcessEntity extends BaseEntity {
     protected $organization = null;
 	protected $created_at;
 
-	public function fieldType() {
-		return [
-			'document' => [
-				'type' => DocumentEntity::class,
-			],
-			'operation' => [
-				'type' => OperationEntity::class,
-			],
-            'organization' => [
-                'type' => OrganizationEntity::class,
-            ],
-		];
-	}
-
-
 }

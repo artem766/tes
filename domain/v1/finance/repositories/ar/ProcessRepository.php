@@ -19,7 +19,7 @@ class ProcessRepository extends BaseActiveArRepository implements ProcessInterfa
 	protected $schemaClass = true;
 
 	public function all(Query $query = null){
-		$query->with(['operation','document']);
+		$query->with(['operation','document','organization']);
 		return parent::all($query);
 	}
 

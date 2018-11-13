@@ -6,7 +6,7 @@ use yii2lab\extension\activeRecord\repositories\base\BaseActiveArRepository;
 use domain\v1\finance\interfaces\repositories\OrganizationInterface;
 
 /**
- * Class OrganizationRepository.php
+ * Class OrganizationRepository
  * 
  * @package domain\v1\finance\repositories\ar
  * 

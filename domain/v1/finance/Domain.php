@@ -9,6 +9,7 @@ namespace domain\v1\finance;
  * @property-read \domain\v1\finance\interfaces\services\ProcessInterface $process
  * @property-read \domain\v1\finance\interfaces\services\DocumentInterface $document
  * @property-read \domain\v1\finance\interfaces\services\OperationInterface $operation
+ * @property-read \domain\v1\finance\interfaces\services\OrganizationInterface $organization
  */
 class Domain extends \yii2lab\domain\Domain {
 	
