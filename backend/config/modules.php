@@ -48,4 +48,8 @@ return [
 		'class' => 'backend\modules\process\Module',
 		'as access' => Behavior::access(PermissionEnum::BACKEND_ALL),
 	],
+	'reports' => [
+		'class' => 'backend\modules\reports\Module',
+		'as access' => Behavior::access(PermissionEnum::BACKEND_ALL),
+	],
 ];

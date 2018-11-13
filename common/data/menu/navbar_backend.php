@@ -10,6 +10,7 @@ return [
 		'backend\modules\document\helpers\Menu',
 		'backend\modules\process\helpers\Menu',
         'backend\modules\organization\helpers\Menu',
+		'backend\modules\reports\helpers\Menu',
 		'yii2module\article\admin\helpers\Menu',
 		'yii2woop\service\admin\helpers\Menu',
 		[
