@@ -29,10 +29,11 @@ if (!empty($foreignOperations))
     </div>
 
     <div class="form-group">
-		<?= Html::submitButton(Yii::t('action', 'save'), ['class' => 'btn btn-primary']) ?>
-    </div>
+		<?= Html::button(Yii::t('action', 'download'), ['class' => 'btn btn-primary']) ?>
 
+    </div>
 <?php ActiveForm::end(); ?>
+
 <?php
 $this->registerJs('var ids = ' . json_encode($ids),View::POS_HEAD);
 $this->registerJsFile('/js/main.js?'.time());

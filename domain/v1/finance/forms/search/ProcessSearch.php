@@ -12,10 +12,11 @@ class ProcessSearch extends Model {
 	public $document;
 	public $operation;
 	public $organization;
+	public $isIncome;
 
 	public function rules() {
 		return [
-			[['document', 'operation', 'organization'], 'safe'],
+			[['document', 'operation', 'organization','$isIncome'], 'safe'],
 		];
 	}
 
