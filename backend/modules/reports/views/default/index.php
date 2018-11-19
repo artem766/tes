@@ -25,22 +25,13 @@ $columns = [
 		'content'=>function($data){
 			return $data->document->name;
 		},
-		'filter' => \App::$domain->finance->document->arrayList()
-
+		'filter' => \App::$domain->finance->document->arrayList(true)
 	],
     [
 		'attribute' => 'organization',
 		'label' => Yii::t('finance/reports', 'organization'),
 		'content'=>function($data){
 			return !empty($data->organization) ? $data->organization->name : '-';
-		},
-		'filter' => \App::$domain->finance->organization->arrayList()
-	],
-	[
-		'attribute' => 'operation',
-		'label' => Yii::t('finance/reports', 'organization'),
-		'content'=>function($data){
-			return $data->operation->isIncome;
 		},
 		'filter' => \App::$domain->finance->organization->arrayList()
 	],

@@ -12,16 +12,16 @@ class ProcessSearch extends Model {
 	public $document;
 	public $operation;
 	public $organization;
-	public $isIncome;
+	public $title;
 
 	public function rules() {
 		return [
-			[['document', 'operation', 'organization','$isIncome'], 'safe'],
+			[['document', 'operation', 'organization'], 'safe'],
 		];
 	}
 
 	public function titleAttribute() {
-		return 'document';
+		return ['organization'];
 	}
 
 	public function prepareQuery(Query $query) {

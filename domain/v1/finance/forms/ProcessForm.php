@@ -8,6 +8,7 @@ class ProcessForm extends Model
 {
 
 	public $id;
+	public $name;
 	public $document;
 	public $operation;
     public $organization;
