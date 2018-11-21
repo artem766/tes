@@ -25,5 +25,6 @@ class ProcessEntity extends BaseEntity {
     protected $amount = 0;
     protected $organization = null;
 	protected $created_at;
-
+	protected $from;
+	protected $to;
 }

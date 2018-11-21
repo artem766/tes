@@ -2,45 +2,53 @@
 
 namespace domain\v1\finance\forms\search;
 
+use DateInterval;
+use DateTime;
 use yii2lab\domain\base\Model;
 use yii2lab\domain\data\Query;
-use yii2lab\extension\activeRecord\helpers\SearchHelper;
-use yii2lab\extension\yii\helpers\ArrayHelper;
 
 class ProcessSearch extends Model {
 
 	public $document;
 	public $operation;
 	public $organization;
-	public $title;
+	public $created_at;
+	public $datetime_start;
+	public $datetime_end;
 
 	public function rules() {
 		return [
-			[['document', 'operation', 'organization'], 'safe'],
+			[['document', 'operation', 'organization', 'created_at', 'datetime_start', 'datetime_end',], 'safe'],
 		];
 	}
 
-	public function titleAttribute() {
-		return ['organization'];
+	public function ignoreAttributes() {
+		return ['datetime_start', 'datetime_end', 'created_at'];
 	}
 
 	public function prepareQuery(Query $query) {
-		$titleAttribute = ArrayHelper::toArray($this->titleAttribute());
+		if($this->datetime_start) {
+			$query->andWhere(['>=', 'created_at', $this->convert($this->datetime_start)]);
+		}
+
+		if($this->datetime_end) {
+			$query->andWhere(['<', 'created_at', $this->convert($this->datetime_end)]);
+		}
 		foreach($this->getAttributes() as $name => $value) {
-			if($value !== '') {
-				if(!in_array($name, $titleAttribute)) {
+			if(!in_array($name, $this->ignoreAttributes())) {
+				if($value !== '') {
 					$query->andWhere([$name => $value]);
 				}
 			}
-		}
-		if($this->{$titleAttribute[0]}) {
-			$query->andWhere([SearchHelper::SEARCH_PARAM_NAME => $this->{$titleAttribute[0]}]);
+
 		}
 	}
-	
 
-	
+	private function convert($datatime) {
+		$date = new DateTime(str_replace('.', '-', $datatime));
+		$date->add(new DateInterval('PT6H'));
+		return $date->format(DATE_ATOM);
+	}
 
-	
 
 }

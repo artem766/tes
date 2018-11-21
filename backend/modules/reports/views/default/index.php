@@ -2,6 +2,7 @@
 
 /* @var $this yii\web\View */
 
+use kartik\daterange\DateRangePicker;
 use yii\grid\GridView;
 use yii\helpers\Html;
 
@@ -25,7 +26,7 @@ $columns = [
 		'content'=>function($data){
 			return $data->document->name;
 		},
-		'filter' => \App::$domain->finance->document->arrayList(true)
+		'filter' => \App::$domain->finance->document->arrayList()
 	],
     [
 		'attribute' => 'organization',
@@ -34,6 +35,28 @@ $columns = [
 			return !empty($data->organization) ? $data->organization->name : '-';
 		},
 		'filter' => \App::$domain->finance->organization->arrayList()
+	],
+
+	[
+		'attribute' => 'created_at',
+		'label' => Yii::t('finance/reports', 'to'),
+		'format'    => ['datetime', 'php:Y.m.d H:i:s'],
+		'value'     => function ($model) {
+			return $model->created_at;
+		},
+		'filter'     => DateRangePicker::widget([
+			'model'         => $searchModel,
+			'attribute'     => 'created_at',
+			'convertFormat' => true,
+			'startAttribute'=>'datetime_start',
+			'endAttribute'  =>'datetime_end',
+			'presetDropdown'=> true,
+			'pluginOptions' => [
+				'locale' => [
+					'format' => 'Y.m.d H:i:s'
+				],
+			],
+		])
 	],
 	[
 		'class' => ActionColumn::class,
