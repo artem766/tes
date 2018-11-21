@@ -63,7 +63,6 @@ $columns = [
 		'template' => '{delete}'
 	],
 ];
-
 ?>
 
 
@@ -74,4 +73,4 @@ $columns = [
 	'columns' => $columns,
 ]); ?>
 
-<?= Html::a(Yii::t('action', 'create'), $baseUrl . 'create', ['class' => 'btn btn-success']) ?>
+<?= Html::a(Yii::t('finance/reports', 'download'), $baseUrl . 'download?searchCondition=' . serialize($_GET), ['class' => 'btn btn-success']) ?>

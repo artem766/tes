@@ -7,5 +7,7 @@ return [
 	'list' => 'Отчеты',
 	'operation' => 'Тип операции ',
 	'document' => 'Тип документа',
-    'organization' => 'Организация'
+    'organization' => 'Организация',
+	'to' => 'Период',
+	'download' => 'Выгрузить'
 ];

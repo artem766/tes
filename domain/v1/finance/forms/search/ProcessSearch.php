@@ -4,6 +4,7 @@ namespace domain\v1\finance\forms\search;
 
 use DateInterval;
 use DateTime;
+use domain\v1\finance\helpers\DateTimeHelper;
 use yii2lab\domain\base\Model;
 use yii2lab\domain\data\Query;
 
@@ -28,11 +29,11 @@ class ProcessSearch extends Model {
 
 	public function prepareQuery(Query $query) {
 		if($this->datetime_start) {
-			$query->andWhere(['>=', 'created_at', $this->convert($this->datetime_start)]);
+			$query->andWhere(['>=', 'created_at', DateTimeHelper::convert($this->datetime_start)]);
 		}
 
 		if($this->datetime_end) {
-			$query->andWhere(['<', 'created_at', $this->convert($this->datetime_end)]);
+			$query->andWhere(['<', 'created_at', DateTimeHelper::convert($this->datetime_end)]);
 		}
 		foreach($this->getAttributes() as $name => $value) {
 			if(!in_array($name, $this->ignoreAttributes())) {
@@ -44,11 +45,7 @@ class ProcessSearch extends Model {
 		}
 	}
 
-	private function convert($datatime) {
-		$date = new DateTime(str_replace('.', '-', $datatime));
-		$date->add(new DateInterval('PT6H'));
-		return $date->format(DATE_ATOM);
-	}
+
 
 
 }
