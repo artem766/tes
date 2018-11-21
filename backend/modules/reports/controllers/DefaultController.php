@@ -2,40 +2,36 @@
 
 namespace backend\modules\reports\controllers;
 
-use domain\v1\finance\forms\DocumentForm;
 use domain\v1\finance\forms\ProcessForm;
 use domain\v1\finance\forms\search\ProcessSearch;
 use domain\v1\finance\helpers\DateTimeHelper;
-use mdm\admin\models\User;
 use yii2lab\domain\data\Query;
 use yii2lab\domain\web\ActiveController as Controller;
 
-class DefaultController extends Controller
-{
+class DefaultController extends Controller {
 
 	public $serviceName = 'finance.process';
 	public $formClass = ProcessForm::class;
 	public $service = 'finance.process';
 
-	public function actions()
-	{
+	public function actions() {
 		$actions = parent::actions();
 		$actions['index']['render'] = 'index';
 		$actions['index']['searchClass'] = ProcessSearch::class;
 		return $actions;
 	}
-	public function actionDownload($searchCondition)
-	{
+
+	public function actionDownload($searchCondition) {
 		$query = Query::forge();
 		$searchCondition = unserialize($searchCondition);
 		$searchCondition = array_shift($searchCondition);
-		if(!empty($searchCondition['operation'])){
+		if(!empty($searchCondition['operation'])) {
 			$query->andWhere('operation', $searchCondition['operation']);
 		}
-		if(!empty($searchCondition['document'])){
+		if(!empty($searchCondition['document'])) {
 			$query->andWhere('document', $searchCondition['document']);
 		}
-		if(!empty($searchCondition['organization'])){
+		if(!empty($searchCondition['organization'])) {
 			$query->andWhere('organization', $searchCondition['organization']);
 		}
 		if(!empty($searchCondition['datetime_start'])) {
@@ -46,23 +42,32 @@ class DefaultController extends Controller
 			$query->andWhere(['<', 'created_at', DateTimeHelper::convert($searchCondition['datetime_end'])]);
 		}
 		$processEntityCollection = \App::$domain->finance->process->all($query);
+		$arrayForExcel = [];
+		foreach($processEntityCollection as $processEntity) {
+			$temp[] = $processEntity->document->name;
+			$temp[] = $processEntity->operation->name;
+
+			$temp[] = !empty($processEntity->organization) ? $processEntity->organization->name : '';
+
+			$temp[] = $processEntity->amount;
+			$temp[] = $processEntity->created_at;
+			$arrayForExcel [] = $temp;
+			$temp = [];
+		}
 
 		$file = \Yii::createObject([
 			'class' => 'codemix\excelexport\ExcelFile',
 			'sheets' => [
 
 				'Result per Country' => [   // Name of the excel sheet
-					'data' => [
-						['fr', 'France', 1.234, '2014-02-03 12:13:14'],
-						['de', 'Germany', 2.345, '2014-02-05 19:18:39'],
-						['uk', 'United Kingdom', 3.456, '2014-03-03 16:09:04'],
-					],
+					'data' => $arrayForExcel,
 
 					// Set to `false` to suppress the title row
 					'titles' => [
-						'Code',
-						'Name',
-						'Volume',
+						'document',
+						'operation',
+						'organization',
+						'amount',
 						'Created At',
 					],
 
@@ -87,8 +92,8 @@ class DefaultController extends Controller
 		]);
 // Save on disk
 //		$file->saveAs('/tmp/export.xlsx');
-		return $file->send('export.xlsx');
+		return $file->send('report.xlsx');
 
- }
+	}
 
 }
