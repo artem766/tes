@@ -29,7 +29,6 @@ class DefaultController extends Controller
 		$query = Query::forge();
 		$searchCondition = unserialize($searchCondition);
 		$searchCondition = array_shift($searchCondition);
-//		prr($searchCondition,1,1);
 		if(!empty($searchCondition['operation'])){
 			$query->andWhere('operation', $searchCondition['operation']);
 		}
