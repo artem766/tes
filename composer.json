@@ -40,7 +40,8 @@
 		"yii2module/yii2-account": "1.62.*",
 		"yii2module/yii2-profile": "0.22.*",
 		"yii2module/yii2-summary": "0.4.*",
-		"alex-lyanik/yii2-viewlog": "dev-master"
+		"alex-lyanik/yii2-viewlog": "dev-master",
+		"codemix/yii2-excelexport": "^2.7"
 
 
 
