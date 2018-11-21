@@ -33,7 +33,7 @@ return [
 	'dashboard' => 'yii2module\dashboard\domain\Domain',
 	'notify' => 'yii2lab\notify\domain\Domain',
 	'navigation' => 'yii2lab\navigation\domain\Domain',
-	'guide' => 'yii2module\guide\domain\Domain',
+
 	'rbac' => 'yii2lab\rbac\domain\Domain',
 	'lang' => 'yii2module\lang\domain\Domain',
 	'geo' => 'yii2lab\geo\domain\Domain',
