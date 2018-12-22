@@ -19,6 +19,8 @@ use yii\widgets\ActiveForm;
 
 <?= $form->field($model, 'phone')->textInput(); ?>
 
+<?= $form->field($model, 'occupation')->textInput(); ?>
+
 
 <div class="form-group">
 	<?= Html::submitButton(Yii::t('action', 'save'), ['class' => 'btn btn-primary']) ?>

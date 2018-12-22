@@ -19,6 +19,7 @@ class m181111_182133_create_finance_organization_table extends Migration
             'name' => $this->text(),
             'address' => $this->text(),
             'phone' => $this->text(),
+            'occupation' =>$this->text(),
 		];
 
 	}

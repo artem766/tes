@@ -24,6 +24,10 @@ $columns = [
 		'attribute' => 'phone',
 		'label' => Yii::t('finance/organization', 'phone'),
 	],
+    [
+        'attribute' => 'occupation',
+        'label' => Yii::t('finance/organization', 'occupation'),
+    ],
 	[
 		'class' => ActionColumn::class,
 		'template' => '{update} {delete}'

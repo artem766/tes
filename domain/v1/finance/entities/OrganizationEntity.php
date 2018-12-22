@@ -19,4 +19,5 @@ class OrganizationEntity  extends BaseEntity
     protected $name;
     protected $phone;
     protected $address;
+    protected $occupation;
 }

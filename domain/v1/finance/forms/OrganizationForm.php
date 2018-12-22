@@ -11,7 +11,7 @@ class OrganizationForm extends Model
     public $name;
     public $address;
     public $phone;
-
+    public $occupation;
     public function rules()
     {
         return [
@@ -28,6 +28,7 @@ class OrganizationForm extends Model
             'name' => Yii::t('finance/organization', 'name'),
             'address' => Yii::t('finance/organization', 'address'),
             'phone' => Yii::t('finance/organization', 'phone'),
+            'occupation' => Yii::t('finance/operation', 'occupation'),
         ];
     }
 }
