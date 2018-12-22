@@ -7,7 +7,7 @@ use yii\helpers\Html;
 
 use yii2lab\misc\yii\grid\TitleColumn;
 use yii2lab\extension\web\grid\ActionColumn;
-$this->title = Yii::t('finance/operation', 'list');
+$this->title = Yii::t('finance/document', 'list');
 
 $baseUrl = $this->context->getBaseUrl();
 
@@ -47,5 +47,5 @@ $columns = [
 	'layout' => '{summary}{items}',
 	'columns' => $columns,
 ]); ?>
-<?php prr($baseUrl,1,1);?>
+
 <?= Html::a(Yii::t('action', 'create'), $baseUrl . 'create', ['class' => 'btn btn-success']) ?>
