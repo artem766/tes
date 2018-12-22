@@ -28,7 +28,7 @@ class OrganizationForm extends Model
             'name' => Yii::t('finance/organization', 'name'),
             'address' => Yii::t('finance/organization', 'address'),
             'phone' => Yii::t('finance/organization', 'phone'),
-            'occupation' => Yii::t('finance/operation', 'occupation'),
+            'occupation' => Yii::t('finance/organization', 'occupation'),
         ];
     }
 }
