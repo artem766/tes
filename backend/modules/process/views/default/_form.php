@@ -24,16 +24,17 @@ if(!empty($foreignOperations))
 
 		<?= $form->field($model, 'organization')->dropDownList(\App::$domain->finance->organization->arrayList()); ?>
 
-		<?= $form->field($model, 'created_by')->hiddenInput(['value' => Yii::$app->user->id]); ?>
+
 
 		<?= $form->field($model, 'amount')->textInput(); ?>
+
 
     </div>
 
     <div class="form-group">
 		<?= Html::submitButton(Yii::t('action', 'save'), ['class' => 'btn btn-primary']) ?>
     </div>
-
+<?= $form->field($model, 'created_by')->hiddenInput(['value' => Yii::$app->user->id])->label(''); ?>
 <?php ActiveForm::end(); ?>
 <?php
 $this->registerJs('var ids = ' . json_encode($ids), View::POS_HEAD);
