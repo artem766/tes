@@ -9,6 +9,7 @@ class ProcessForm extends Model
 
 	public $id;
 	public $name;
+	public $created_by;
 	public $document;
 	public $operation;
     public $organization;
@@ -18,7 +19,7 @@ class ProcessForm extends Model
 	public function rules()
 	{
 		return [
-			[['document', 'operation', 'amount'], 'required'],
+			[['document','created_by', 'operation', 'amount'], 'required'],
             [['amount'], 'integer'],
 		];
 	}

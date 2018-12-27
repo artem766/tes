@@ -12,7 +12,21 @@ $this->title = Yii::t('finance/operation', 'list');
 $baseUrl = $this->context->getBaseUrl();
 
 $columns = [
-
+	[
+		'attribute' => 'created_by',
+		'label' => Yii::t('finance/process', 'created_by'),
+		'content'=>function($data){
+			return $data->created_by->login;
+		}
+	],
+	[
+		'attribute' => 'created_at',
+		'label' => Yii::t('finance/process', 'created_at'),
+	],
+	[
+		'attribute' => 'amount',
+		'label' => Yii::t('finance/process', 'amount'),
+	],
 	[
 		'attribute' => 'operation',
 		'label' => Yii::t('finance/process', 'operation'),

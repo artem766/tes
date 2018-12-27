@@ -18,7 +18,6 @@ class ProcessSchema extends BaseSchema
 	public function relations()
 	{
 		return [
-
 			'document' => [
 				'type' => RelationEnum::ONE,
 				'field' => 'document',
@@ -43,6 +42,14 @@ class ProcessSchema extends BaseSchema
                     'field' => 'id',
                 ],
             ],
+			'created_by' => [
+				'type' => RelationEnum::ONE,
+				'field' => 'created_by',
+				'foreign' => [
+					'id' => 'account.login',
+					'field' => 'id',
+				],
+			],
 		];
 	}
 

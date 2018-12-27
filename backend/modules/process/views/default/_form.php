@@ -10,8 +10,8 @@ use yii\widgets\ActiveForm;
 
 $foreignOperations = \App::$domain->finance->operation->foreignList();
 $ids = [];
-if (!empty($foreignOperations))
-	foreach ($foreignOperations as $operation) {
+if(!empty($foreignOperations))
+	foreach($foreignOperations as $operation) {
 		$ids[] = $operation->id;
 	}
 ?>
@@ -22,9 +22,11 @@ if (!empty($foreignOperations))
 
 		<?= $form->field($model, 'operation')->dropDownList(\App::$domain->finance->operation->arrayList()); ?>
 
-        <?= $form->field($model, 'organization')->dropDownList(\App::$domain->finance->organization->arrayList()); ?>
+		<?= $form->field($model, 'organization')->dropDownList(\App::$domain->finance->organization->arrayList()); ?>
 
-        <?= $form->field($model, 'amount')->textInput(); ?>
+		<?= $form->field($model, 'created_by')->hiddenInput(['value' => Yii::$app->user->id]); ?>
+
+		<?= $form->field($model, 'amount')->textInput(); ?>
 
     </div>
 
@@ -34,5 +36,5 @@ if (!empty($foreignOperations))
 
 <?php ActiveForm::end(); ?>
 <?php
-$this->registerJs('var ids = ' . json_encode($ids),View::POS_HEAD);
-$this->registerJsFile('/js/main.js?'.time());
+$this->registerJs('var ids = ' . json_encode($ids), View::POS_HEAD);
+$this->registerJsFile('/js/main.js?' . time());

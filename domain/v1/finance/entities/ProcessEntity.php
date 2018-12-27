@@ -20,6 +20,7 @@ use yii2lab\domain\BaseEntity;
 class ProcessEntity extends BaseEntity {
 
 	protected $id;
+	protected $created_by;
 	protected $document;
 	protected $operation;
     protected $amount = 0;

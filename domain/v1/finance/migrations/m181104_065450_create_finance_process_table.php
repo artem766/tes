@@ -17,6 +17,8 @@ class m181104_065450_create_finance_process_table extends Migration
 	{
 		return [
 			'id' => $this->primaryKey(),
+			'created_by' => $this->string()->notNull(),
+			'amount' => $this->float()->notNull(),
 			'document_type_id' =>$this->integer()->notNull(),
 			'operation_type_id' =>$this->integer()->notNull(),
             'organization_id' =>$this->integer(),
