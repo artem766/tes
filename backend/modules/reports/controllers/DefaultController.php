@@ -2,6 +2,7 @@
 
 namespace backend\modules\reports\controllers;
 
+use App;
 use domain\v1\finance\forms\ProcessForm;
 use domain\v1\finance\forms\search\ProcessSearch;
 use domain\v1\finance\helpers\DateTimeHelper;
@@ -93,6 +94,13 @@ class DefaultController extends Controller {
 // Save on disk
 //		$file->saveAs('/tmp/export.xlsx');
 		return $file->send('report.xlsx');
+
+	}
+	public function actionGraph() {
+		App::$domain->finance->process->getDebtData();
+		App::$domain->finance->process->getDebtDates();
+
+		return $this->render('debt_graph');
 
 	}
 

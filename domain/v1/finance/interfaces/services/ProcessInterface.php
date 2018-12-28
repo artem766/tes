@@ -14,4 +14,5 @@ use yii2lab\domain\interfaces\services\CrudInterface;
  */
 interface ProcessInterface extends CrudInterface {
 
+	public function getDebtData();
 }

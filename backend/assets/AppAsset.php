@@ -15,9 +15,11 @@ class AppAsset extends AssetBundle
 		'css/main.css',
 	];
 	public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
+
 	public $depends = [
 		'yii2lab\applicationTemplate\common\assets\main\MainAsset',
 		'yii2lab\ubuntu_font\assets\UbuntuAsset',
 		'yii2lab\applicationTemplate\backend\assets\adminLte\AdminLteAsset',
+
 	];
 }

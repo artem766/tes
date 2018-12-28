@@ -31,7 +31,7 @@ $columns = [
         'attribute' => 'isIncome',
         'label' => Yii::t('finance/operation', 'isIncome'),
         'content'=>function($data){
-            return $data->isIncome == true ? 'Да' : 'Нет';
+            return $data->isIncome == true ? 'Дебит' : 'Кредит';
         }
     ],
 	[
@@ -47,5 +47,5 @@ $columns = [
 	'layout' => '{summary}{items}',
 	'columns' => $columns,
 ]); ?>
-<?php prr($baseUrl,1,1);?>
+
 <?= Html::a(Yii::t('action', 'create'), $baseUrl . 'create', ['class' => 'btn btn-success']) ?>

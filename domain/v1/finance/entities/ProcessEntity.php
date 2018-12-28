@@ -3,6 +3,7 @@
 namespace domain\v1\finance\entities;
 
 use yii2lab\domain\BaseEntity;
+use yii2module\account\domain\v2\entities\LoginEntity;
 
 /**
  * Class ProcessEntity
@@ -10,8 +11,9 @@ use yii2lab\domain\BaseEntity;
  * @package domain\v1\finance\entities
  *
  * @property integer $id
- * @property integer $service_id
- * @property double $amount
+ * @property string $created_at
+ * @property float $amount
+ * @property LoginEntity $created_by
  * @property DocumentEntity $document
  * @property OperationEntity $operation
  * @property OrganizationEntity $organization

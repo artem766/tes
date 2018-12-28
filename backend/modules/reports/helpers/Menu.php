@@ -26,7 +26,7 @@ class Menu implements MenuInterface {
 					],
 					[
 						'label' => ['finance/reports', 'graph'],
-						'url' => 'graph',
+						'url' => 'report/graph',
 						'icon' => 'file-text-o',
 						'module' => 'reports',
 						'access' => PermissionEnum::BACKEND_ALL,
