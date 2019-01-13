@@ -45,6 +45,7 @@ class ProcessService extends BaseActiveService implements ProcessInterface {
 		}
 		return;
 	}
+
 	/**
 	 * @var ProcessEntity $processEntity
 	 * @return array
@@ -54,9 +55,20 @@ class ProcessService extends BaseActiveService implements ProcessInterface {
 		$processEntitiesCollection = $this->repository->all($query);
 		$relust = [];
 		foreach($processEntitiesCollection as $processEntity) {
-			prr(DateTimeHelper::getMonth($processEntity->created_at),1,1);
+			prr(DateTimeHelper::getMonth($processEntity->created_at), 1, 1);
 		}
+		$minDate = self::findMinDate($processEntitiesCollection);
+		$maxDate = self::findMaxDate($processEntitiesCollection);
+
 		return;
+	}
+
+	private function findMinDate($processEntitiesCollection) {
+
+	}
+
+	private function findMaxDate($processEntitiesCollection) {
+
 	}
 }
 //{

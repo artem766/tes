@@ -2,12 +2,13 @@
 
 namespace backend\modules\reports\controllers;
 
-use App;
 use domain\v1\finance\forms\ProcessForm;
 use domain\v1\finance\forms\search\ProcessSearch;
 use domain\v1\finance\helpers\DateTimeHelper;
 use yii2lab\domain\data\Query;
 use yii2lab\domain\web\ActiveController as Controller;
+use yii2lab\extension\arrayTools\helpers\ArrayIterator;
+use yii2lab\extension\yii\helpers\ArrayHelper;
 
 class DefaultController extends Controller {
 
@@ -96,12 +97,97 @@ class DefaultController extends Controller {
 		return $file->send('report.xlsx');
 
 	}
-	public function actionGraph() {
-		App::$domain->finance->process->getDebtData();
-		App::$domain->finance->process->getDebtDates();
 
-		return $this->render('debt_graph');
+	public function actionGraph() {
+
+		$data = \App::$domain->finance->process->all();
+		$arrays = $this->calc($data);
+
+		return $this->render('analyze', ['inCategoryWorst' => $arrays['inCategoryWorst'], 'inPeriodWorst' => $arrays['inPeriodWorst']]);
 
 	}
 
+	public function calc($data) {
+
+		$entityCollection = ArrayHelper::toArray($data);
+		$entityCollection = $this->setPeriod($entityCollection);
+
+		$periodDictionary = [];
+		$categoryDictionary = [];
+
+		foreach($entityCollection as $columnNumber => $column) {
+			if(!(in_array($column['period'], $periodDictionary))) {
+				$periodDictionary[] = $column['period'];
+			}
+			if(!(in_array($column['operation'], $categoryDictionary))) {
+				$categoryDictionary[] = $column['operation'];
+			}
+		}
+		$searchCollections = new ArrayIterator;
+		$searchCollections->setCollection($entityCollection);
+
+		$inCategoryWorst = [];
+		foreach($categoryDictionary as $currentCategory) {
+			$query = Query::forge();
+			$query->where('operation', $currentCategory);
+			$assignments = $searchCollections->all($query);
+
+			$inCategoryWorst[$currentCategory['name']] = $this->getWorstByPeriod($assignments);
+		}
+
+		$inPeriodWorst = [];
+		foreach($periodDictionary as $currentPeriod) {
+			$query = Query::forge();
+			$query->where('period', $currentPeriod);
+			$assignments = $searchCollections->all($query);
+			$inPeriodWorst[$currentPeriod] = $this->getWorstByPeriod($assignments);
+		}
+
+		return ['inCategoryWorst' => $inCategoryWorst, 'inPeriodWorst' => $inPeriodWorst];
+	}
+
+	private function getWorstByPeriod($allByCertainSearch) {
+
+		$worst = $allByCertainSearch[0];
+		foreach($allByCertainSearch as $key => $entity) {
+
+			if(!empty($allByCertainSearch[$key + 1])) {
+				if($worst['amount'] < $allByCertainSearch[$key + 1]['amount']) {
+					$worst = $allByCertainSearch[$key + 1];
+				}
+			}
+		}
+		return $worst;
+	}
+
+	private function setPeriod($entityCollection) {
+
+		foreach($entityCollection as $key => $entity) {
+			if(in_array($this->getMonth($entity), ['01', '02', '03'])) {
+				$entity['period'] = 1;
+			};
+			if(in_array($this->getMonth($entity), ['04','05', '06'])) {
+				$entity['period'] = 2;
+			};
+			if(in_array($this->getMonth($entity), ['07', '08', '09'])) {
+				$entity['period'] = 3;
+			};
+			if(in_array($this->getMonth($entity), [ '10', '11', '12'])) {
+				$entity['period'] = 4;
+			};
+			$entityCollection[$key] =  $entity;
+		}
+	return $entityCollection;
+	}
+
+	private function getMonth($entity) {
+		$date = new \DateTime($entity['created_at']);
+		$month = date_format($date, "m");
+		return $month;
+	}
+	private function getYearMonth($entity) {
+		$date = new \DateTime($entity['created_at']);
+		$month = date_format($date, "y-m");
+		return $month;
+	}
 }

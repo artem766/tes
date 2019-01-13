@@ -15,7 +15,7 @@ class DateTimeHelper {
 	public static  function getMonth($date) {
 		$date = new DateTime($date);
 		$date->format('m');
-		prr($date->date,1,1);
-		return date("F", strtotime($date->date));
+		prr(date("F", st($date)),1,1);
+		return ;
 	}
 }

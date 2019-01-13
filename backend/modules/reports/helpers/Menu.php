@@ -25,8 +25,8 @@ class Menu implements MenuInterface {
 						'access' => PermissionEnum::BACKEND_ALL,
 					],
 					[
-						'label' => ['finance/reports', 'graph'],
-						'url' => 'report/graph',
+						'label' => ['finance/reports', 'analyze'],
+						'url' => 'report/analyze',
 						'icon' => 'file-text-o',
 						'module' => 'reports',
 						'access' => PermissionEnum::BACKEND_ALL,

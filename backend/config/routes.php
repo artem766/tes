@@ -2,5 +2,5 @@
 
 return [
 	'' => 'dashboard',
-	'report/graph' => 'reports/default/graph'
+	'report/analyze' => 'reports/default/graph'
 ];
